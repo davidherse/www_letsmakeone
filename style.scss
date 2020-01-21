@@ -34,7 +34,13 @@
 }
 
 .bg-home, .bg-home-lg {
-  margin-top: 0vw;
+  margin-top: -8vw;
+  background-image: url('/assets/img/tree-background.png');
+  background-size: 155%;
+  height: 45vw;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-repeat-y: no-repeat;
 }
 
 
@@ -99,19 +105,17 @@ blockquote, .blockquote, .blockquote-white {
 // Medium devices (tablets, 768px and up)
 @media (min-width: map-get($grid-breakpoints, "md")) { 
   .bg-home-lg {
-    margin-top: -24vw;
+    margin-top: -32vw;
+    background-size: 1000px;
   }
   .pt-top-section-lg {
     padding-top: 8vw;
   }
 
   .col-image {
-    padding-left: 1.4rem;
-    padding-right: rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-
-
-
 }
 
 @media (min-width: map-get($grid-breakpoints, "lg")) { 
@@ -135,10 +139,23 @@ blockquote, .blockquote, .blockquote-white {
   .p-site-last {
     padding-bottom: 0;
   }
+
+  .bg-home-lg {
+    background-size: 1200px;
+  }
+
+  .col-image {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: map-get($grid-breakpoints, "xl")) { 
   h2, .h2, blockquote, .blockquote  {
   font-size: $h2-font-size;
+  }
+
+  .bg-home-lg {
+    background-size: 1400px;
   }
 }
