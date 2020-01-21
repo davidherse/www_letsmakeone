@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-white sticky-top navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="#">Let's Make One</a>
+    <a class="navbar-brand" href="/">Let's Make One</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,31 +8,31 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/how-we-work">
             <span class="{% if page.layout == "how" %}active{% endif %}">How We Work</span>
             {% if page.layout == "how" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/manifesto">
             <span class="{% if page.layout == "manifesto" %}active{% endif %}">Manifesto</span>
             {% if page.layout == "manifesto" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/plans">
             <span class="{% if page.layout == "plans" %}active{% endif %}">Plans</span>
             {% if page.layout == "plans" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="/about">
             <span class="{% if page.layout == "about" %}active{% endif %}">About Us</span>
             {% if page.layout == "about" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
       </ul>
-      <a href="" class="btn btn-primary nav-item mb-3 mt-2 mb-lg-0 mt-lg-0" href="#" role="button">Register your interest to invest{% if page.layout == "index" %}<span class="sr-only">(current){% endif %}</span></a>
+      <a href="" class="btn btn-primary nav-item mb-3 mt-2 mb-lg-0 mt-lg-0" href="/register" role="button">Register your interest to invest{% if page.layout == "index" %}<span class="sr-only">(current){% endif %}</span></a>
     </div>
   </div>
 </nav>
