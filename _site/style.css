@@ -2725,13 +2725,17 @@ ol, ul { padding-left: 15px; }
 
 .bg-hills-how { background-image: url("/assets/img/phone-background.png"); }
 
+.bg-hills-mission { background-image: url("/assets/img/signs-background.png"); }
+
 .p-site-head { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 
 .p-site-last { padding-bottom: 0; }
 
 .col-image { padding-left: 4rem; padding-right: 4rem; }
 
-h2, .h2, blockquote, .blockquote { font-size: 1.4583333333rem; }
+h2, .h2, blockquote, .blockquote { font-size: 1.4583333333rem; margin-bottom: 0.8rem; }
+
+p a:not(.btn) { text-decoration: underline; }
 
 blockquote, .blockquote, .blockquote-white { margin: 0; font-weight: 600; text-align: center; }
 
@@ -2750,6 +2754,7 @@ blockquote, .blockquote, .blockquote-white { margin: 0; font-weight: 600; text-a
 @media (min-width: 576px) { .bg-image, .bg-image-solar, .bg-image-wind { background-position: left; background-size: 143%; padding: 5rem 5rem 4rem 5rem; } }
 @media (min-width: 768px) { .bg-hills { margin-top: -32vw; background-size: 1000px; }
   .bg-hills-how { margin-top: -26vw; }
+  .bg-hills-mission { margin-top: -20vw; }
   .pt-top-section-lg { padding-top: 8vw; }
   .col-image { padding-left: 2rem; padding-right: 2rem; } }
 @media (min-width: 992px) { .p-site-head { padding: 6rem; }

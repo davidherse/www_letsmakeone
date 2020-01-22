@@ -54,6 +54,11 @@ ol, ul {
   background-image: url('/assets/img/phone-background.png');
 }
 
+
+.bg-hills-mission {
+  background-image: url('/assets/img/signs-background.png');
+}
+
 .p-site-head  {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -71,6 +76,11 @@ ol, ul {
 
 h2, .h2, blockquote, .blockquote {
   font-size: $h2-font-size-md;
+  margin-bottom: 0.8rem;
+}
+
+p a:not(.btn) {
+  text-decoration: underline;
 }
 
 blockquote, .blockquote, .blockquote-white {
@@ -126,6 +136,11 @@ blockquote, .blockquote, .blockquote-white {
   .bg-hills-how {
     margin-top: -26vw;
   }
+
+  .bg-hills-mission {
+    margin-top: -20vw;
+  }
+
   .pt-top-section-lg {
     padding-top: 8vw;
   }
