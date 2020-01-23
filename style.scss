@@ -37,6 +37,10 @@ ol, ul {
   background-image: url('/assets/img/wind-background.jpg');
 }
 
+.bg-image-about {
+  background-image: url('/assets/img/letterbox-background.png');
+}
+
 .bg-hills {
   margin-top: -8vw;
   background-size: 155%;
@@ -54,9 +58,23 @@ ol, ul {
   background-image: url('/assets/img/phone-background.png');
 }
 
-
 .bg-hills-mission {
   background-image: url('/assets/img/signs-background.png');
+}
+
+.bg-hills-plans {
+  background-image: url('/assets/img/dog-background.png');
+  margin-top: -21vw;
+}
+
+.bg-hills-about {
+  background-image: url('/assets/img/letterbox-background.png');
+  margin-top: -21vw;
+}
+
+.bg-hills-register {
+  background-image: url('/assets/img/hand-up-background.png');
+  margin-top: -21vw;
 }
 
 .p-site-head  {
@@ -114,6 +132,33 @@ blockquote, .blockquote, .blockquote-white {
   max-width: 350px;
 }
 
+.amount-picker, .amount-picker-input {
+  background-color: white;
+  font-size: 2rem;
+  padding: 0.8rem;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 5px 10px #d4cccc;
+  font-weight: 600;
+
+  label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &.selected {
+    box-shadow: 0 0 0 0.2rem #013EA6;
+    background-color: #9DEAFE;
+    border-color: #013EA6;
+  }
+
+
+}
+
+.amount-picker-input {
+  padding: 0 0.8rem 0.8rem 0.8rem;
+}
+
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
@@ -133,12 +178,16 @@ blockquote, .blockquote, .blockquote-white {
     background-size: 1000px;
   }
 
-  .bg-hills-how {
+  .bg-hills-how, .bg-hills-about, .bg-hills-register {
     margin-top: -26vw;
   }
 
   .bg-hills-mission {
     margin-top: -20vw;
+  }
+
+  .bg-hills-plans {
+    margin-top: -22vw;
   }
 
   .pt-top-section-lg {
@@ -148,6 +197,14 @@ blockquote, .blockquote, .blockquote-white {
   .col-image {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .amount-picker, .amount-picker-input {
+    padding: 2rem;
+  }
+
+  .amount-picker-input {
+    padding: 0 1rem 1.7rem 1rem;
   }
 }
 
@@ -173,8 +230,12 @@ blockquote, .blockquote, .blockquote-white {
     padding-bottom: 0;
   }
 
-  .bg-hills,  {
+  .bg-hills  {
     background-size: 1200px;
+  }
+
+  .bg-hills-plans {
+    margin-top: -26vw;
   }
 
   .col-image {

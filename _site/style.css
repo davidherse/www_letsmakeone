@@ -2719,6 +2719,8 @@ ol, ul { padding-left: 15px; }
 
 .bg-image-wind { background-image: url("/assets/img/wind-background.jpg"); }
 
+.bg-image-about { background-image: url("/assets/img/letterbox-background.png"); }
+
 .bg-hills { margin-top: -8vw; background-size: 155%; height: 45vw; background-position-x: center; background-position-y: bottom; background-repeat-y: no-repeat; }
 
 .bg-hills-home { background-image: url("/assets/img/tree-background.png"); }
@@ -2726,6 +2728,12 @@ ol, ul { padding-left: 15px; }
 .bg-hills-how { background-image: url("/assets/img/phone-background.png"); }
 
 .bg-hills-mission { background-image: url("/assets/img/signs-background.png"); }
+
+.bg-hills-plans { background-image: url("/assets/img/dog-background.png"); margin-top: -21vw; }
+
+.bg-hills-about { background-image: url("/assets/img/letterbox-background.png"); margin-top: -21vw; }
+
+.bg-hills-register { background-image: url("/assets/img/hand-up-background.png"); margin-top: -21vw; }
 
 .p-site-head { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 
@@ -2751,17 +2759,27 @@ blockquote, .blockquote, .blockquote-white { margin: 0; font-weight: 600; text-a
 
 .footer-image { max-width: 350px; }
 
+.amount-picker, .amount-picker-input { background-color: white; font-size: 2rem; padding: 0.8rem; width: 100%; border-radius: 10px; box-shadow: 1px 5px 10px #d4cccc; font-weight: 600; }
+.amount-picker label, .amount-picker-input label { font-size: 1rem; font-weight: 600; }
+.amount-picker.selected, .amount-picker-input.selected { box-shadow: 0 0 0 0.2rem #013EA6; background-color: #9DEAFE; border-color: #013EA6; }
+
+.amount-picker-input { padding: 0 0.8rem 0.8rem 0.8rem; }
+
 @media (min-width: 576px) { .bg-image, .bg-image-solar, .bg-image-wind { background-position: left; background-size: 143%; padding: 5rem 5rem 4rem 5rem; } }
 @media (min-width: 768px) { .bg-hills { margin-top: -32vw; background-size: 1000px; }
-  .bg-hills-how { margin-top: -26vw; }
+  .bg-hills-how, .bg-hills-about, .bg-hills-register { margin-top: -26vw; }
   .bg-hills-mission { margin-top: -20vw; }
+  .bg-hills-plans { margin-top: -22vw; }
   .pt-top-section-lg { padding-top: 8vw; }
-  .col-image { padding-left: 2rem; padding-right: 2rem; } }
+  .col-image { padding-left: 2rem; padding-right: 2rem; }
+  .amount-picker, .amount-picker-input { padding: 2rem; }
+  .amount-picker-input { padding: 0 1rem 1.7rem 1rem; } }
 @media (min-width: 992px) { .p-site-head { padding: 6rem; }
   .p-site, .p-site-last { padding-left: 6rem; padding-right: 6rem; padding-top: 0rem; padding-bottom: 2rem; }
   .bg-image, .bg-image-solar, .bg-image-wind { background-position: 50%; background-size: cover; padding: 5rem 5rem 4rem 5rem; }
   .p-site-last { padding-bottom: 0; }
   .bg-hills { background-size: 1200px; }
+  .bg-hills-plans { margin-top: -26vw; }
   .col-image { padding-left: 3rem; padding-right: 3rem; } }
 @media (min-width: 1200px) { h2, .h2, blockquote, .blockquote { font-size: 1.8rem; }
   .bg-hills { background-size: 1400px; } }

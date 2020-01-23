@@ -24,45 +24,26 @@
 <!-- End of Async Drift Code -->
 
 <script>
-  var ready = function() {
-  (function() {
-    var menutoggleElem = document.getElementById('menutoggle');
-    var menuId = menutoggleElem.dataset.target;
-    var menuElem = document.getElementById(menuId);
-    var bodyElem = document.getElementsByTagName('body')[0];
+  $(function() {
+      var $amountHidden = $('#amountHidden');
+      var $other = $('#amountOther');
+      var $previousSelection = $('[data-amount]').first();
 
-    var isOpen = false;
-    var closeTriggered = false;
+      $('[data-amount]').on('click', function(e){
+        $previousSelection.removeClass('selected');
+        $previousSelection = $(e.target);
+        $amountHidden.val($previousSelection.data('amount'));
+        $previousSelection.addClass('selected');
+        $other.val('');
+      });
 
-    bodyElem.addEventListener('click', function(e) {
-      if(isOpen) {
-        menuElem.classList.remove('open');
-        menutoggleElem.classList.remove('open');
-        isOpen = false;
-        closeTriggered = true;
-      }
-      setTimeout(function() {
-        closeTriggered = false;
-        console.log(closeTriggered);
-      })
-    }, true);
+      $other.on('input', function(e){
+        $previousSelection.removeClass('selected');
+        $amountHidden.val($(e.target).val());
+      });     
+   
 
-    menutoggleElem.addEventListener('click', function(e) {
-      if(!isOpen && closeTriggered == false) {
-        menuElem.classList.add('open');
-        menutoggleElem.classList.add('open');
-        isOpen = true;
-      } else {
-        closeTriggered = false;
-      }
-    });
-
+    // $(document).on('ready', ready);
+    // $(document).on('page:load', ready);
   }());
-
-
-  
-  }
-
-  $(document).ready(ready);
-  $(document).on('page:load', ready);
 </script>
