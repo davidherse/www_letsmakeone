@@ -1,6 +1,7 @@
 <head>
   <meta charset="utf-8"></meta>
   <title>{{ site.title }}{% if page.title %} — {{ page.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description | smartify }}">
 
   {% if page.redirect_to %}
     <link rel="canonical" href="{{ page.redirect_to }}"/>
@@ -28,22 +29,31 @@
   <meta name="msapplication-TileColor" content="#1b202c">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- Facebook Meta -->
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ site.title }}{% if page.title %} — {{ page.title }}{% endif %}" />
+  <meta property="og:description" content="{{ page.description | default: site.description | smartify }}" />
+  <meta property="og:image" content="{{ site.url }}{{ '/assets/img/letsmakeone-meta.png' | fingerprint }}" />
 
   <link rel="stylesheet" href="{{ '/style.css' | fingerprint }}">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
-  
+     <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
   {% if jekyll.environment == "production" %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js" crossorigin="anonymous"></script>
   {% else %}  
-     <script src="{{ '/assets/local/js/jquery-3.4.1.slim.min.js' | fingerprint }}"></script>
+
      <script src="{{ '/assets/local/js/popper.min.js' | fingerprint }}"></script>
      <script src="{{ '/assets/local/js/bootstrap.min.js' | fingerprint }}"></script>
     <script src="{{ '/assets/local/js/turbolinks.js' | fingerprint }}"></script>
   {% endif %}
 
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
    {% if jekyll.environment == "production" %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -56,7 +66,5 @@
 
       gtag('config', 'UA-113716360-1');
     </script>
-
-
-    {% endif %}
+  {% endif %}
 </head>

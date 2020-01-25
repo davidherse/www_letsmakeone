@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="container p-site-head pt-top-section-lg">
+<div class="container p-site-head pt-top-section-lg" id="RegisterBlock">
   <div class="row">
     <div class="col">
       <div class="container-fluid pr-0 pl-0 pb-4">
@@ -28,7 +28,7 @@ layout: default
             </div>
             <div class="col-md p-1">
               <div class="form-group amount-picker-input">
-                <label for="amount-other">Other:</label>
+                <label for="amountOther">Other:</label>
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">$</div>
@@ -41,8 +41,8 @@ layout: default
         </div>
       </div>
     </div>
-    <div id="mc_embed_signup">
-      <form action="https://letsmakeone.us4.list-manage.com/subscribe/post?u=9f537b1bdd24294b3b0b8ebe8&amp;id=658b4f421a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+ 
+      <form action="https://letsmakeone.us4.list-manage.com/subscribe/post?u=9f537b1bdd24294b3b0b8ebe8&amp;id=658b4f421a" method="post" id="Register" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div class="form-group row">
           <div class="col-md mc-field-group">
             <label for="full-name" class="font-weight-bold" >Full Name</label>
@@ -53,7 +53,8 @@ layout: default
         <div class="form-group row">
           <div class="col-md mc-field-group">
             <label for="mce-EMAIL" class="font-weight-bold" >Email Address</label>
-            <input type="email" value="" name="EMAIL" class="form-control amount-input" id="mce-EMAIL">
+            <input type="email" value="" name="EMAIL" class="form-control amount-input" id="EMAIL">
+            <div class="invalid-feedback" id="EMAIL-error"></div>
           </div>
            <div class="col-md"></div>
         </div>
@@ -97,15 +98,52 @@ layout: default
           </div>
         </div>
         <input id="amountHidden" type="hidden" value="" name="AMOUNT">
-        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9f537b1bdd24294b3b0b8ebe8_658b4f421a" tabindex="-1" value=""></div>
-        <input type="submit" value="Register to invest" name="subscribe" class="btn btn-primary">
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </div> 
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input type="text" name="b_9f537b1bdd24294b3b0b8ebe8_658b4f421a" tabindex="-1" value="">
+        </div>
+        <input type="submit" value="Register to invest" name="subscribe" class="btn btn-primary" id="RegisterSubmit">
       </form>
+      <div id="Responses" class="container-fluid pr-0 pl-0 pb-0 pt-2">
+        <div class="response alert alert-danger d-none" id="ErrorResponse" role="alert">
+          <span class="message"></span>
+        </div>
+        <div class="response alert alert-success d-none" id="SuccessResponse" role="alert">
+          <span class="message"></span>
+        </div>
+      </div> 
+  </div>
+
+<div class="container p-site-head pt-top-section-lg" id="thankyouBlock">
+  <div class="row">
+    <div class="col">
+      <div class="container-fluid pr-0 pl-0 pb-4">
+        <h2><img src="{{ '/assets/img/check-icon.svg' | fingerprint }}" alt="" class="pr-2">Thank you.</h2>
+        <p>We need more people to help and invest. <span class="font-weight-bold">Please share this with everyone you know.</span></p>
+        <p>A better future – Let's make one.</p>
+      </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <div class="container-fluid pr-0 pl-0 pb-4 ">
+        <ul>
+          <li>
+            <a href="https://twitter.com/intent/tweet?text=This is how we are going to fix the climate. Through business committed to positive environmental impact. Invested a better world – Let's Make One&hashtags=LetsMakeOne,ProfitForPurpose,ClimateChange&url={{ site.url }}" class="twitter-share-button" data-size="large">Tweet</a>
+          </li>
+          <li class="linkedin-share">
+            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+            <script type="IN/Share" data-url="{{ site.url }}"  data-size="large"></script>
+          </li>
+          <li>
+            <div class="fb-share-button" data-href="{{ site.url }}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+
 <div class="container-fluid p-0 bg-hills bg-hills-register"></div>
 
 <div class="container-fluid bg-dark mt-n1">

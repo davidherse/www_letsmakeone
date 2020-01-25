@@ -2709,6 +2709,9 @@ a.text-dark:hover, a.text-dark:focus { color: #596687 !important; }
   .table .thead-dark th { color: inherit; border-color: #dee2e6; } }
 ol, ul { padding-left: 15px; }
 
+li.linkedin-share button { /* padding: 14px!important; */ width: 75px; height: 28px !important; padding-top: 4px !important; margin-bottom: 8px; font-size: 12px !important; line-height: 20px !important; }
+li.linkedin-share button svg { display: block; top: -1px; position: relative; }
+
 .navbar { box-shadow: 1px 1px 50px #816b8429; }
 
 .active { border-bottom: 1px solid #818dac70; }

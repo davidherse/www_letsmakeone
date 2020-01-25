@@ -3,6 +3,7 @@
  <head>
   <meta charset="utf-8"></meta>
   <title>Let's Make One — Terms and conditions</title>
+  <meta name="description" content="Let’s invest in our future. Let’s make solutions.">
 
   
 
@@ -26,23 +27,35 @@
   <meta name="msapplication-TileColor" content="#1b202c">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- Facebook Meta -->
+  <meta property="og:url" content="http://localhost:4000/terms" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Let's Make One — Terms and conditions" />
+  <meta property="og:description" content="Let’s invest in our future. Let’s make solutions." />
+  <meta property="og:image" content="http://localhost:4000/assets/img/letsmakeone-meta.png" />
 
   <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
-  
+     <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
     
-     <script src="/assets/local/js/jquery-3.4.1.slim.min.js"></script>
+
      <script src="/assets/local/js/popper.min.js"></script>
      <script src="/assets/local/js/bootstrap.min.js"></script>
     <script src="/assets/local/js/turbolinks.js"></script>
   
 
-  <meta name="description" content="Let's invest in our future. Let's make solutions.">
 
    
 </head>
 
   <body class="bg-light">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=1197779027092989&autoLogAppEvents=1"></script>
+    
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
       <div class="container">
         <span class="skiplink-text">Skip to main content</span>
@@ -290,6 +303,7 @@ We reserve the right, but are not obligated, to limit the sales of our Services 
       var $other = $('#amountOther');
       var $previousSelection = $('[data-amount]').first();
 
+
       $('[data-amount]').on('click', function(e){
         $previousSelection.removeClass('selected');
         $previousSelection = $(e.target);
@@ -306,10 +320,134 @@ We reserve the right, but are not obligated, to limit the sales of our Services 
 
     // $(document).on('ready', ready);
     // $(document).on('page:load', ready);
+
   }());
 </script>
 
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='FNAME';ftypes[2]='text';fnames[3]='AMOUNT';ftypes[3]='text';fnames[4]='OTHERINT';ftypes[4]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script>
+
+$(function() {
+  var $form = $('#Register');
+  var $submitButton = $('#RegisterSubmit');
+  var $errorResponse = $('#ErrorResponse');
+  var $successResponse = $('#SuccessResponse');
+  var $registerBlock = $('#RegisterBlock');
+  var $thankyouBlock = $('#thankyouBlock');
+  var submitButtonDefaultValue = $submitButton.val();
+  var fnames = new Array(); 
+  var ftitle = new Array();
+
+  fnames[0]='EMAIL';
+  ftitle[0]='Email';
+  fnames[2]='FNAME';
+  ftitle[2]='Full Name';
+  fnames[3]='AMOUNT';
+  ftitle[3]='Amount';
+  fnames[4]='OTHERINT';
+  ftitle[4]='Amount';
+
+  function onSuccess(msg) {
+    $successResponse.find('.message').html(msg);
+    $successResponse.removeClass("d-none");
+    $registerBlock.addClass("d-none");
+    $thankyouBlock.removeClass("d-none");
+
+    $(':input','#Register').not(':button, :submit, :reset, :hidden')
+      .val('')
+      .prop('checked', false)
+      .prop('selected', false);
+  }
+
+  function onValidationError(response) {
+    $('#' + response.fieldName).addClass('is-invalid');
+    $('#' + response.fieldName + '-error').html(response.msg);
+
+    $errorResponse.find('.message').html('Please check the ' + response.fieldTitle + ' field is valid.');
+    $errorResponse.removeClass("d-none");
+  }
+
+  function onRejected(msg) {
+    $errorResponse.html(msg);
+    $errorResponse.removeClass("d-none");
+  }
+
+  function onComplete(data) { 
+    setLoadIndicator(false);
+
+    if (data.result === "success") {
+      onSuccess(data.msg);
+    } else {
+       var msg = data.msg.split(' - ');
+
+      if(msg.length > 1) {
+        onValidationError({
+          fieldName: fnames[msg[0]],
+          fieldTitle: ftitle[msg[0]],
+          msg: msg[1]
+        })
+      } else {
+        onRejected(data.msg);
+      }
+    }
+  }
+
+  function setLoadIndicator(state) {
+    $submitButton.attr("disabled", state);
+    $('.response').addClass('d-none');
+    $('.is-invalid').removeClass('is-invalid');
+
+    if(state === true) {
+      $successResponse.find('.message').html('');
+      $errorResponse.find('.message').html('');
+      $submitButton.val('Sending...');
+    } else {
+      $submitButton.val(submitButtonDefaultValue);
+    }
+  }
+
+  function submitForm($form) {
+    setLoadIndicator(true);
+
+    $.ajax({
+      type: $form.attr('method'),
+      url: $form.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
+      data: $form.serialize(),
+      timeout: 5000, // Set timeout value, 5 seconds
+      cache       : false,
+      dataType    : 'jsonp',
+      contentType: "application/json; charset=utf-8",
+      error       : function(err) { },
+      success     : onComplete
+    });
+
+  }
+
+  if ( $form.length > 0 ) {
+    $('form input[type="submit"]').on('click', function ( event ) {
+      if ( event ) event.preventDefault();
+      submitForm($form);
+    });
+  }
+}());
+</script>
+
+
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 
   </body>
 </html>
