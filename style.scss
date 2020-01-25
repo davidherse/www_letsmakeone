@@ -13,11 +13,23 @@ ol, ul {
   padding-left: 15px;
 }
 
+.social-share li {
+   list-style-type: none;
+   margin-bottom: 8px;
+}
+
+.hide-thanks {
+  visibility: hidden;
+  height: 0px;
+  overflow: hidden;
+  margin-top: -20vw;
+}
+
 li.linkedin-share button {
     /* padding: 14px!important; */
     width: 75px;
     height: 28px !important;
-    padding-top: 4px !important;
+    padding-top: 5px !important;
     margin-bottom: 8px;
     font-size: 12px !important;
     line-height: 20px !important;

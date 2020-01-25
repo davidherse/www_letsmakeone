@@ -34,6 +34,14 @@
   <meta property="og:description" content="Let’s invest in our future. Let’s make solutions." />
   <meta property="og:image" content="http://localhost:4000/assets/img/letsmakeone-meta.png" />
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@LetsMakeOne">
+  <meta name="twitter:creator" content="@LetsMakeOne">
+  <meta name="twitter:title" content="Let's Make One — Register Your Interest to Invest">
+  <meta name="twitter:description" content="Let’s invest in our future. Let’s make solutions.">
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/letsmakeone-meta.png" >
+
   <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
      <script
@@ -213,12 +221,12 @@
       </div> 
   </div>
 
-<div class="container p-site-head pt-top-section-lg" id="thankyouBlock">
+<div class="container p-site-head pt-top-section-lg hide-thanks" id="thankyouBlock">
   <div class="row">
     <div class="col">
       <div class="container-fluid pr-0 pl-0 pb-4">
         <h2><img src="/assets/img/check-icon.svg" alt="" class="pr-2">Thank you.</h2>
-        <p>We need more people to help and invest. <span class="font-weight-bold">Please share this with everyone you know.</span></p>
+        <p>We'll let you know as soon as we open public share offering. We need more people to help and invest. <span class="font-weight-bold">Please share this with everyone you know.</span></p>
         <p>A better future – Let's make one.</p>
       </div>
     </div>
@@ -226,7 +234,7 @@
   <div class="row">
     <div class="col">
       <div class="container-fluid pr-0 pl-0 pb-4 ">
-        <ul>
+        <ul class="social-share">
           <li>
             <a href="https://twitter.com/intent/tweet?text=This is how we are going to fix the climate. Through business committed to positive environmental impact. Invested a better world – Let's Make One&hashtags=LetsMakeOne,ProfitForPurpose,ClimateChange&url=http://localhost:4000" class="twitter-share-button" data-size="large">Tweet</a>
           </li>
@@ -336,6 +344,25 @@
   }());
 </script>
 
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
+</script>
+
 <script>
 
 $(function() {
@@ -362,7 +389,8 @@ $(function() {
     $successResponse.find('.message').html(msg);
     $successResponse.removeClass("d-none");
     $registerBlock.addClass("d-none");
-    $thankyouBlock.removeClass("d-none");
+    $thankyouBlock.removeClass("hide-thanks");
+    window.scrollTo(0, 0); 
 
     $(':input','#Register').not(':button, :submit, :reset, :hidden')
       .val('')
@@ -444,22 +472,7 @@ $(function() {
 </script>
 
 
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script>
 
   </body>
 </html>

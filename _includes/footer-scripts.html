@@ -50,6 +50,25 @@
   }());
 </script>
 
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
+</script>
+
 <script>
 
 $(function() {
@@ -76,7 +95,8 @@ $(function() {
     $successResponse.find('.message').html(msg);
     $successResponse.removeClass("d-none");
     $registerBlock.addClass("d-none");
-    $thankyouBlock.removeClass("d-none");
+    $thankyouBlock.removeClass("hide-thanks");
+    window.scrollTo(0, 0); 
 
     $(':input','#Register').not(':button, :submit, :reset, :hidden')
       .val('')
@@ -158,19 +178,4 @@ $(function() {
 </script>
 
 
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script>

@@ -34,6 +34,14 @@
   <meta property="og:description" content="Let’s invest in our future. Let’s make solutions." />
   <meta property="og:image" content="http://localhost:4000/assets/img/letsmakeone-meta.png" />
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@LetsMakeOne">
+  <meta name="twitter:creator" content="@LetsMakeOne">
+  <meta name="twitter:title" content="Let's Make One">
+  <meta name="twitter:description" content="Let’s invest in our future. Let’s make solutions.">
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/letsmakeone-meta.png" >
+
   <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&display=swap" rel="stylesheet">
      <script
@@ -176,6 +184,25 @@
   }());
 </script>
 
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
+</script>
+
 <script>
 
 $(function() {
@@ -202,7 +229,8 @@ $(function() {
     $successResponse.find('.message').html(msg);
     $successResponse.removeClass("d-none");
     $registerBlock.addClass("d-none");
-    $thankyouBlock.removeClass("d-none");
+    $thankyouBlock.removeClass("hide-thanks");
+    window.scrollTo(0, 0); 
 
     $(':input','#Register').not(':button, :submit, :reset, :hidden')
       .val('')
@@ -284,22 +312,7 @@ $(function() {
 </script>
 
 
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));</script>
 
   </body>
 </html>
