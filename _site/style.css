@@ -2728,7 +2728,7 @@ li.linkedin-share button svg { display: block; top: -1px; position: relative; }
 
 .bg-image-about { background-image: url("/assets/img/letterbox-background.png"); }
 
-.bg-hills { margin-top: -8vw; background-size: 155%; height: 45vw; background-position-x: center; background-position-y: bottom; background-repeat-y: no-repeat; }
+.bg-hills { margin-top: -8vw; background-size: 155%; height: 45vw; background-position-x: center; background-position-y: bottom; background-repeat: repeat-x; }
 
 .bg-hills-home { background-image: url("/assets/img/tree-background.png"); }
 
