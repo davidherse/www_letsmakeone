@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-white sticky-top navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="/"><img src="{{ '/assets/img/letsmakeone-logo.png' | fingerprint }}" class="logo" alt="Let's Make One"></a>
+    <a class="navbar-brand" href="{{ baseurl }}/"><img src="{{ baseurl }}{{ '/assets/img/letsmakeone-logo.png' | fingerprint }}" class="logo" alt="Let's Make One"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,31 +8,31 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/how-we-work">
+          <a class="nav-link" href="{{ baseurl }}/how-we-work">
             <span class="{% if page.layout == "how" %}active{% endif %}">How We Work</span>
             {% if page.layout == "how" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/mission-and-values">
+          <a class="nav-link" href="{{ baseurl }}/mission-and-values">
             <span class="{% if page.layout == "mission-and-values" %}active{% endif %}">Mission & Values</span>
             {% if page.layout == "mission-and-values" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/project-plans">
+          <a class="nav-link" href="{{ baseurl }}/project-plans">
             <span class="{% if page.layout == "project-plans" %}active{% endif %}">Plans</span>
             {% if page.layout == "project-plans" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">
+          <a class="nav-link" href="{{ baseurl }}/about">
             <span class="{% if page.layout == "about" %}active{% endif %}">About Us</span>
             {% if page.layout == "about" %}<span class="sr-only">(current){% endif %}</span>
           </a>
         </li>
       </ul>
-      <a href="/register" class="btn btn-primary nav-item mb-3 mt-2 mb-lg-0 mt-lg-0"  role="button">Register your interest to invest{% if page.layout == "index" %}<span class="sr-only">(current){% endif %}</span></a>
+      <a href="{{ baseurl }}/register" class="btn btn-primary nav-item mb-3 mt-2 mb-lg-0 mt-lg-0"  role="button">Register your interest to invest{% if page.layout == "index" %}<span class="sr-only">(current){% endif %}</span></a>
     </div>
   </div>
 </nav>
