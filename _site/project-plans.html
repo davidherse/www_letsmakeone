@@ -53,7 +53,6 @@
 
      <script src="/assets/local/js/popper.min.js"></script>
      <script src="/assets/local/js/bootstrap.min.js"></script>
-    <script src="/assets/local/js/turbolinks.js"></script>
   
 
 
@@ -72,7 +71,7 @@
 
     <nav class="navbar navbar-light bg-white sticky-top navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="/">Let's Make One</a>
+    <a class="navbar-brand" href="/"><img src="/assets/img/letsmakeone-logo.png" class="logo" alt="Let's Make One"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -186,8 +185,7 @@
     <ul class="nav flex-column">
       <li class="nav-item"><a href="/privacy-and-terms" class="nav-link">Privacy and Terms</a></li>
       <li class="nav-item"><a href="/ethics-and-transparency" class="nav-link">Ethics and Transparency</a></li>
-      <li class="nav-item"><a href="/crowd-source-equity" class="nav-link">How Crowd Source Equity Works</a></li>
-      <li class="nav-item"><a href="/contact-us" class="nav-link">Contact Us</a></li>
+      <li class="nav-item"><a href="/how-crowd-source-equity-works" class="nav-link">How Crowd Source Equity Works</a></li>
       <li class="nav-item"><a href="/credits" class="nav-link">Credits</a></li>
       <li class="nav-item"><p class="nav-link">© Let’s Make One Pty Ltd</p></li>
     </ul>
@@ -303,6 +301,7 @@ $(function() {
   function onValidationError(response) {
     $('#' + response.fieldName).addClass('is-invalid');
     $('#' + response.fieldName + '-error').html(response.msg);
+    $('#' + response.fieldName + '-error').addClass("d-block");
 
     $errorResponse.find('.message').html('Please check the ' + response.fieldTitle + ' field is valid.');
     $errorResponse.removeClass("d-none");
@@ -347,21 +346,37 @@ $(function() {
     }
   }
 
+  function onError(err) {
+    setLoadIndicator(false);
+    $errorResponse.find('.message').html('There was an problem with the network. Please check your connection and try again.');
+    $errorResponse.removeClass("d-none");
+  }
+
   function submitForm($form) {
-    setLoadIndicator(true);
+    $('.invalid-feedback').removeClass("d-block");
 
-    $.ajax({
-      type: $form.attr('method'),
-      url: $form.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
-      data: $form.serialize(),
-      timeout: 5000, // Set timeout value, 5 seconds
-      cache       : false,
-      dataType    : 'jsonp',
-      contentType: "application/json; charset=utf-8",
-      error       : function(err) { },
-      success     : onComplete
-    });
+    if (!$form.find('input[name="AMOUNT"]').val()) {
+      onValidationError({
+          fieldName: 'AMOUNT',
+          fieldTitle: 'investment amount',
+          msg: 'Please select an investment amount.'
+        });
 
+    } else { 
+      setLoadIndicator(true);
+
+      $.ajax({
+        type: $form.attr('method'),
+        url: $form.attr('action').replace('/post?', '/post-json?').concat('&c=?'),
+        data: $form.serialize(),
+        timeout: 5000, // Set timeout value, 5 seconds
+        cache       : false,
+        dataType    : 'jsonp',
+        contentType: "application/json; charset=utf-8",
+        error       : onError,
+        success     : onComplete
+      });
+    }
   }
 
   if ( $form.length > 0 ) {
@@ -373,7 +388,14 @@ $(function() {
 }());
 </script>
 
-
+<script>
+  (function() {
+    var emailAddress = 'info' + '@' + 'letsmakeone' + '.io';
+    var $emailAddress =$('#emailAddress');
+      $emailAddress.text(emailAddress);
+      $emailAddress.attr("href", 'mailto:' + emailAddress);
+  }());
+</script>
 
 
   </body>

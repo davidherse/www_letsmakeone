@@ -2750,6 +2750,10 @@ li.linkedin-share button svg { display: block; top: -1px; position: relative; }
 
 h2, .h2, blockquote, .blockquote { font-size: 1.4583333333rem; margin-bottom: 0.8rem; }
 
+h3, .h3 { font-size: 1.25rem; margin-bottom: 0.8rem; }
+
+h4, .h4 { font-size: 1.0416666667rem; margin-bottom: 0.8rem; }
+
 p a:not(.btn) { text-decoration: underline; }
 
 blockquote, .blockquote, .blockquote-white { margin: 0; font-weight: 600; text-align: center; }
@@ -2771,6 +2775,8 @@ blockquote, .blockquote, .blockquote-white { margin: 0; font-weight: 600; text-a
 .amount-picker.selected, .amount-picker-input.selected { box-shadow: 0 0 0 0.2rem #013EA6; background-color: #9DEAFE; border-color: #013EA6; }
 
 .amount-picker-input { padding: 0 0.8rem 0.8rem 0.8rem; }
+
+.logo { max-width: 195px; }
 
 @media (min-width: 576px) { .bg-image, .bg-image-solar, .bg-image-wind { background-position: left; background-size: 143%; padding: 5rem 5rem 4rem 5rem; } }
 @media (min-width: 768px) { .bg-hills { margin-top: -32vw; background-size: 1000px; }

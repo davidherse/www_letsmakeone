@@ -125,6 +125,16 @@ h2, .h2, blockquote, .blockquote {
   margin-bottom: 0.8rem;
 }
 
+h3, .h3 {
+  font-size: $h4-font-size-md;
+  margin-bottom: 0.8rem;
+}
+
+h4, .h4 {
+  font-size: $h5-font-size-md;
+  margin-bottom: 0.8rem;
+}
+
 p a:not(.btn) {
   text-decoration: underline;
 }
@@ -187,6 +197,9 @@ blockquote, .blockquote, .blockquote-white {
   padding: 0 0.8rem 0.8rem 0.8rem;
 }
 
+.logo {
+  max-width: 195px;
+}
 // Extra small devices (portrait phones, less than 576px)
 // No media query for `xs` since this is the default in Bootstrap
 
