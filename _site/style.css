@@ -2713,6 +2713,8 @@ ol, ul { padding-left: 15px; }
 
 .hide-thanks { visibility: hidden; height: 0px; overflow: hidden; margin-top: -20vw; }
 
+.profile-img { max-width: 145px; }
+
 li.linkedin-share button { /* padding: 14px!important; */ width: 75px; height: 28px !important; padding-top: 5px !important; margin-bottom: 8px; font-size: 12px !important; line-height: 20px !important; }
 li.linkedin-share button svg { display: block; top: -1px; position: relative; }
 

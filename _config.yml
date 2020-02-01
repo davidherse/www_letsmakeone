@@ -32,10 +32,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - .gitignore
-# littlefinger:
-#   include:
-#     - style.css
-#     - assets
+littlefinger:
+  include:
+    - style.css
+    - assets
 sass:
   load_paths:
   - _scss
