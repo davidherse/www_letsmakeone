@@ -2788,7 +2788,8 @@ blockquote, .blockquote, .blockquote-white { margin: 0; font-weight: 600; text-a
   .pt-top-section-lg { padding-top: 8vw; }
   .col-image { padding-left: 2rem; padding-right: 2rem; }
   .amount-picker, .amount-picker-input { padding: 2rem; }
-  .amount-picker-input { padding: 0 1rem 1.7rem 1rem; } }
+  .amount-picker-input { padding: 0 1rem 1.7rem 1rem; }
+  .profile-img { max-width: none; } }
 @media (min-width: 992px) { .p-site-head { padding: 6rem; }
   .p-site, .p-site-last { padding-left: 6rem; padding-right: 6rem; padding-top: 0rem; padding-bottom: 2rem; }
   .bg-image, .bg-image-solar, .bg-image-wind { background-position: 50%; background-size: cover; padding: 5rem 5rem 4rem 5rem; }

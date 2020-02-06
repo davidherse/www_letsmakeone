@@ -251,6 +251,10 @@ blockquote, .blockquote, .blockquote-white {
   .amount-picker-input {
     padding: 0 1rem 1.7rem 1rem;
   }
+
+  .profile-img {
+    max-width: none;
+  }
 }
 
 @media (min-width: map-get($grid-breakpoints, "lg")) { 
